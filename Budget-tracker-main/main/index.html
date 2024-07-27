@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="signin.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h1>Welcome to Our Event Management Site</h1>
+            <p>Stay updated with all campus events and activities.</p>
+            <div class="buttons">
+                <button class="btn" onclick="location.href='student-login.html'">Student</button>
+                <button class="btn" onclick="location.href='club-login.html'">Club</button>
+            </div>
+        </section>
+        
+        <section class="events">
+            <!-- You can add more event cards here or keep this section empty -->
+        </section>
+
+        <section id="login-form" style="display:none;">
+            <h2>Login</h2>
+            <form onsubmit="handleLogin(event)">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 College Name. All rights reserved.</p>
+    </footer>
+    <script>
+        function showLogin(role) {
+            document.querySelector('.hero').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            window.location.href = 'event-organisers.html'; // Change to the URL of the second page
+        }
+    </script>
+</body>
+</html>
