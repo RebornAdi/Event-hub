@@ -21,7 +21,7 @@
     <main>
         <section class="signin">
             <h1>Student Login</h1>
-            <form>
+            <form id="loginForm">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" required>
@@ -30,12 +30,30 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <button class="btn" onclick="location.href='event-organisers.html'">Login</button>
+                <button type="submit" class="btn">Login</button>
             </form>
             <p class="signup-prompt">Don't have an account? <a href="student-register.html">Sign up</a></p>
         </section>
     </main>
-    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            
+            // Set the correct username and password
+            var correctUsername = 'student';
+            var correctPassword = 'password';
+
+            if (username === correctUsername && password === correctPassword) {
+                alert('Login successful!');
+                window.location.href = 'event-organisers.html'; // Redirect to the club page
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        });
+    </script>
     <footer>
         <p>&copy; 2024 College Name. All rights reserved.</p>
     </footer>
