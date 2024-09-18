@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    //made by Adi
     // Example event data
     const events = [
         { name: 'Tech Talk', date: '2024-08-01' },
